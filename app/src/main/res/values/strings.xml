@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Notes App</string>
+    <string name="notes">Notes</string>
+    <string name="search_notes">Search Notes</string>
+    <string name="note_title">Judul</string>
+    <string name="note_subtitle">Sub Judul</string>
+    <string name="type_note_here">Masukkan Catatanmu...</string>
+    <string name="more_option">Opsi Tambahan</string>
+    <string name="pick_color">Pilih warna</string>
+    <string name="add_image">Tambahkan Gambar</string>
+    <string name="add_url">Tambahkan URL</string>
+    <string name="cancel_dialog">CANCEL</string>
+    <string name="delete_note">Hapus Note </string>
+    <string name="konfirmasi_hapus">Yakin Ingin Menghapus Note?</string>
+</resources>
