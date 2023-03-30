@@ -30,11 +30,10 @@ import java.util.TimerTask;
 //adaptor menghubungkan data (notes) ke RecyclerView
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {
 
-    private List<Note> notes;
+    private List<Note> notes,notesSource;
     private NotesListener notesListener;
     //for searching notes
     private Timer timer;
-    private List<Note> notesSource;
 
     public NotesAdapter(List<Note> notes, NotesListener notesListener) {
         this.notes = notes;
@@ -136,5 +135,10 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             timer.cancel();
         }
     }
+    public void removeItem(int position) {
+        notes.remove(position);
+        notifyDataSetChanged();
+    }
+
 }
 

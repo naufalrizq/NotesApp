@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.notes">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
     <application
@@ -18,13 +17,13 @@
         <activity
             android:name=".activities.CreateNoteActivity"
             android:exported="false"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensor"
             android:windowSoftInputMode="stateHidden"
             />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensor"
             android:windowSoftInputMode="stateHidden"
             >
             <intent-filter>

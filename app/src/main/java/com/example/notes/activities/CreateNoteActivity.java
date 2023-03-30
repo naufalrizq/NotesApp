@@ -46,17 +46,12 @@ public class CreateNoteActivity extends AppCompatActivity {
 
 //    DEKLARASI VARIABLE
     private EditText inputNoteTitle, inputNoteSubtitle, inputNoteText;
-    private TextView textDateTime;
+    private TextView textDateTime,textWebURL;
     private View viewSubtitleIndicator;
     private ImageView imageNote;
-    private TextView textWebURL;
     private LinearLayout layoutWebURL;
-
-    private String selectedNoteColor;
-    private String selectedImagePath;
-    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1;
-    private static final int REQUEST_CODE_SELECT_IMAGE = 2;
-
+    private String selectedNoteColor,selectedImagePath;
+    private static final int REQUEST_CODE_STORAGE_PERMISSION = 1,REQUEST_CODE_SELECT_IMAGE = 2;
     private AlertDialog dialogAddURL, dialogDeleteNote;
     private Note alreadyAvailableNote;
 
@@ -117,6 +112,7 @@ public class CreateNoteActivity extends AppCompatActivity {
                 layoutWebURL.setVisibility(View.GONE);
             }
         });
+        //nimpa sampe sini
 
         //ketika tekan imageRemoveImage
         findViewById(R.id.imageRemoveImage).setOnClickListener(new View.OnClickListener() {
@@ -368,6 +364,15 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // dismiss the dialog if it is showing
+        if (dialogDeleteNote != null && dialogDeleteNote.isShowing()) {
+            dialogDeleteNote.dismiss();
+        }
+    }
 
     //konfirmasi hapus notes
     private void showDeleteNoteDialog() {
@@ -493,6 +498,8 @@ public class CreateNoteActivity extends AppCompatActivity {
         }
         return filePath;
     }
+
+
 
     private void showAddURLDialog() {
         if(dialogAddURL == null) {

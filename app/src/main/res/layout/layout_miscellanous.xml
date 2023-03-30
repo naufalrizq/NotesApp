@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/background_miscellanous"
     app:behavior_peekHeight = "@dimen/_40sdp"
-    app:layout_behavior="@string/bottom_sheet_behavior"
-    >
+    app:layout_behavior="@string/bottom_sheet_behavior">
 
     <TextView
         android:id="@+id/textMiscellaneous"
