@@ -1,3 +1,4 @@
+<!-- Tema Gelap -->
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Notes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -5,5 +6,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+
+    </style>
+    <style name="TEXT">
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+    </style>
+    <style name="ICON">
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:textAppearance">@color/colorWhite</item>
+    </style>
+    <style name="bg">
+        <item name="android:background">@color/colorWhite</item>
     </style>
 </resources>

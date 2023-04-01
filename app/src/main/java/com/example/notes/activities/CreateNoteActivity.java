@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import com.example.notes.R;
 import com.example.notes.database.NotesDatabase;
+import com.example.notes.databinding.ActivityMainBinding;
 import com.example.notes.entities.Note;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
@@ -44,7 +45,7 @@ import java.util.Locale;
 
 public class CreateNoteActivity extends AppCompatActivity {
 
-//    DEKLARASI VARIABLE
+    //    DEKLARASI VARIABLE
     private EditText inputNoteTitle, inputNoteSubtitle, inputNoteText;
     private TextView textDateTime,textWebURL;
     private View viewSubtitleIndicator;
@@ -54,6 +55,7 @@ public class CreateNoteActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_STORAGE_PERMISSION = 1,REQUEST_CODE_SELECT_IMAGE = 2;
     private AlertDialog dialogAddURL, dialogDeleteNote;
     private Note alreadyAvailableNote;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,6 +136,7 @@ public class CreateNoteActivity extends AppCompatActivity {
         setSubtitleIndicatorColor();
     }
 
+
     private void setViewOrUpdateNote() {
         inputNoteTitle.setText(alreadyAvailableNote.getTitle());
         inputNoteSubtitle.setText(alreadyAvailableNote.getSubtitle());
@@ -183,11 +186,11 @@ public class CreateNoteActivity extends AppCompatActivity {
         if(layoutWebURL.getVisibility() == View.VISIBLE) {
             note.setWebLink(textWebURL.getText().toString());
         }
-    /**
-        database tidak bisa menjalankan operasi database pada Main Thread
-        harus dilakukan secara asyncrhonous->tidak nunggu perintah lain
-        task save note dilakukan secara asynchronous
-     **/
+        /**
+         database tidak bisa menjalankan operasi database pada Main Thread
+         harus dilakukan secara asyncrhonous->tidak nunggu perintah lain
+         task save note dilakukan secara asynchronous
+         **/
         @SuppressLint("StaticFieldLeak")
         class SaveNoteTask extends AsyncTask<Void, Void, Void> {
 
@@ -222,7 +225,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //apabila belum ditekan
                 if (bottomSheetBehavior.getState() != bottomSheetBehavior.STATE_EXPANDED) {
-                // melakukan expand
+                    // melakukan expand
                     bottomSheetBehavior.setState(bottomSheetBehavior.STATE_EXPANDED);
                 }
                 //apabila sudah ditekan, dan ditekan lagi, maka minimize
@@ -351,17 +354,19 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         });
 
+
+        //Di disable karna bug
         //apabila user melakukan update maka tampilkan layout delete note
-        if(alreadyAvailableNote != null) {
-            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setVisibility(View.VISIBLE);
-            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    bottomSheetBehavior.setState(bottomSheetBehavior.STATE_COLLAPSED);
-                    showDeleteNoteDialog();
-                }
-            });
-        }
+//        if(alreadyAvailableNote != null) {
+//            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setVisibility(View.VISIBLE);
+//            layoutMiscellaneous.findViewById(R.id.layoutDeleteNote).setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    bottomSheetBehavior.setState(bottomSheetBehavior.STATE_COLLAPSED);
+//                    showDeleteNoteDialog();
+//                }
+//            });
+//        }
 
     }
     @Override
@@ -457,6 +462,7 @@ public class CreateNoteActivity extends AppCompatActivity {
             }
         }
     }
+
 
     //kondisi ketika select image, lalu tampilkan langsung ke notes sekarang
     @Override

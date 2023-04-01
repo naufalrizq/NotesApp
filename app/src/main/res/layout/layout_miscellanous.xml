@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_miscellanous"
     app:behavior_peekHeight = "@dimen/_40sdp"
     app:layout_behavior="@string/bottom_sheet_behavior">
 
@@ -17,7 +16,6 @@
         android:gravity="center"
         android:includeFontPadding="false"
         android:text="@string/more_option"
-        android:textColor="@color/colorWhite"
         android:textSize="@dimen/_13ssp"
         >
 
@@ -175,7 +173,6 @@
             android:fontFamily="@font/ubuntu_medium"
             android:includeFontPadding="false"
             android:text="Pilih warna"
-            android:textColor="@color/colorWhite"
             android:textSize="@dimen/_13ssp"
             >
 
@@ -197,7 +194,6 @@
             android:layout_height="@dimen/_22sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
-            app:tint="@color/colorIcons"
             >
 
         </ImageView>
@@ -209,7 +205,6 @@
             android:fontFamily="@font/ubuntu_medium"
             android:includeFontPadding="false"
             android:text="@string/add_image"
-            android:textColor="@color/colorIcons"
             android:textSize="@dimen/_12ssp"
             >
 
@@ -233,7 +228,6 @@
             android:layout_height="@dimen/_22sdp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/ic_web_link"
-            app:tint="@color/colorIcons"
             >
 
         </ImageView>
@@ -245,7 +239,6 @@
             android:fontFamily="@font/ubuntu_medium"
             android:includeFontPadding="false"
             android:text="@string/add_url"
-            android:textColor="@color/colorIcons"
             android:textSize="@dimen/_12ssp"
             >
         </TextView>

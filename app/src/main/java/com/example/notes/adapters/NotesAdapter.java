@@ -135,8 +135,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
             timer.cancel();
         }
     }
-    public void removeItem(int position) {
-        notes.remove(position);
+    public void removeItem() {
+        notes.clear();
+        notifyDataSetChanged();
+    }
+    public void addData(List<Note> notes){
+        removeItem();
+        notes.addAll(notes);
         notifyDataSetChanged();
     }
 
